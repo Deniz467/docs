@@ -14,6 +14,12 @@
         "tab": "Lernen",
         "groups": [
           {
+            "group": "Bernoulli",
+            "pages":[
+              "bernoulli/bernoulli"
+            ]
+          },
+          {
             "group": "Binomialverteilung",
             "pages": [
               "binomialverteilung",
