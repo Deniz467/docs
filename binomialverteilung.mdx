@@ -29,7 +29,23 @@ description: "Wahrscheinlichkeits "
   P(X=k) = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k}
   $$
 
+  - $n$: Anzahl der Versuche
+  - $p$: Erfolgswahrscheinlichkeit des Ereignisses
+  - $k$: Anzahl der Erfolge im Zufallsexperiment
   - $\binom{n}{k}$: Anzahl der Möglichkeiten, $k$ Erfolge in $n$ Versuchen anzuordnen
+  - $p^k$: Wahrscheinlichkeit für $k$ Erfolge
+  - $(1-p)^{n-k}$: Wahrscheinlichkeit für die restlichen Misserfolge
+</Accordion>
+
+<Accordion title="Kumulierte Wahrscheinlichkeit" description="Bei n Versuchen höchstens k Erfolge" icon="dice">
+  $$
+  P(X\leq k) = \sum ^ {k _ \text{Obergrenze}} _ {i=0}\binom{n}{i}p^i(1-p)^{n-i}
+  $$
+
+  - $n$: Anzahl der Versuche
+  - $p$: Erfolgswahrscheinlichkeit des Ereignisses
+  - $k _ {\text{Obergrenze}}$: Obergrenze der gezählten Erfolge
+  - $\sum ^k _ {i=0}\binom{n}{i}$: Anzahl der Möglichkeiten, $k$ Erfolge in $n$ Versuchen anzuordnen, für alle $k$, bis zur Obergrenze
   - $p^k$: Wahrscheinlichkeit für $k$ Erfolge
   - $(1-p)^{n-k}$: Wahrscheinlichkeit für die restlichen Misserfolge
 </Accordion>
