@@ -20,11 +20,16 @@ description: "Wahrscheinlichkeits "
   - $\binom{n}{k}$ = Binomialkoeffizient
 </Note>
 
-<Accordion title="Beispiel" icon="sparkles">
-  - Münze wird fünf mal geworfen
-  - Kopf ist dabei erfolg und Zahl ein Misserfolg
+## Formeln
 
-  > Wie wahrscheinlich ist es dreimal Kopf zu erhalten?
+<Accordion title="Einzelwahrscheinlichkeit" description="Bei n Versuchen genau k Erfolge" icon="dice-one">
+  Die Wahrscheinlich, bei $n$ Versuchen genau $k$ Erfolge zu erzielen, lautet:
 
-  Hierbei ist $p = 0.5$
+  $$
+  P(X=k) = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k}
+  $$
+
+  - $\binom{n}{k}$: Anzahl der Möglichkeiten, $k$ Erfolge in $n$ Versuchen anzuordnen
+  - $p^k$: Wahrscheinlichkeit für $k$ Erfolge
+  - $(1-p)^{n-k}$: Wahrscheinlichkeit für die restlichen Misserfolge
 </Accordion>
