@@ -15,7 +15,7 @@
         "groups": [
           {
             "group": "Bernoulli",
-            "pages":[
+            "pages": [
               "bernoulli/bernoulli"
             ]
           },
@@ -32,10 +32,18 @@
         "tab": "Übungsaufgaben",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Allgemein",
             "pages": [
-              "api-reference/introduction"
+              "excersises/excersises"
             ]
+          },
+          {
+            "group": "Bernoulli",
+            "pages": []
+          },
+          {
+            "group": "Binomialverteilung",
+            "pages": []
           }
         ]
       }
@@ -54,15 +62,15 @@
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
