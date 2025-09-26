@@ -1,6 +1,6 @@
 <svg width="220" height="32" viewBox="0 0 220 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Binomial – Lernseite Logo</title>
-  <desc id="desc">Icon mit drei Balken in Grünverlauf und Wortmarke “Binomial”.</desc>
+  <title id="title">Binomialverteilung – Lernseite Logo</title>
+  <desc id="desc">Icon mit drei Balken in Grünverlauf und Wortmarke “Binonialverteilung”.</desc>
   <defs>
     <!-- Light-Mode Farben als Variablen -->
     <linearGradient id="grad" x1="4" y1="28" x2="28" y2="4" gradientUnits="userSpaceOnUse">
@@ -32,6 +32,6 @@
 
   <!-- WORDMARK -->
   <g transform="translate(36,22)">
-    <text class="word">Binomial</text>
+    <text class="word">Binomialverteilung</text>
   </g>
 </svg>
