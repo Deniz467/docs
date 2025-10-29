@@ -23,7 +23,8 @@
             "group": "Binomialverteilung",
             "pages": [
               "binomialverteilung",
-              "binom/example"
+              "binom/example",
+              "examples/porzellanmanufaktur"
             ]
           }
         ]
