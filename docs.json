@@ -20,6 +20,12 @@
             ]
           },
           {
+            "group": "Sigma",
+            "pages" : [
+              "sigma/sigma"
+            ]
+          },
+          {
             "group": "Binomialverteilung",
             "pages": [
               "binomialverteilung",
