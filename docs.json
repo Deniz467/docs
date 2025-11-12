@@ -22,6 +22,7 @@
           {
             "group": "Sigma",
             "pages" : [
+              "sigma/normalverteilung",
               "sigma/sigma"
             ]
           },
