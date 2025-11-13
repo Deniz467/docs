@@ -1,90 +1,101 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Binomialverteilung",
-  "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
-  },
-  "favicon": "/favicon.svg",
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Lernen",
-        "groups": [
-          {
-            "group": "Bernoulli",
-            "pages": [
-              "bernoulli/bernoulli"
-            ]
-          },
-          {
-            "group": "Sigma",
-            "pages" : [
-              "sigma/normalverteilung",
-              "sigma/sigma"
-            ]
-          },
-          {
-            "group": "Binomialverteilung",
-            "pages": [
-              "binomialverteilung",
-              "binom/example",
-              "examples/porzellanmanufaktur"
-            ]
-          }
+    "$schema": "https://mintlify.com/docs.json",
+    "theme": "mint",
+    "name": "Binomialverteilung",
+    "colors": {
+        "primary": "#16A34A",
+        "light": "#07C983",
+        "dark": "#15803D"
+    },
+    "favicon": "/favicon.svg",
+    "navigation": {
+        "tabs": [
+            {
+                "tab": "Lernen",
+                "groups": [
+                    {
+                        "group": "Bernoulli",
+                        "pages": [
+                            "bernoulli/bernoulli"
+                        ]
+                    },
+                    {
+                        "group": "Sigma",
+                        "pages": [
+                            "sigma/normalverteilung",
+                            "sigma/sigma"
+                        ]
+                    },
+                    {
+                        "group": "Binomialverteilung",
+                        "pages": [
+                            "binomialverteilung",
+                            "binom/example",
+                            "examples/porzellanmanufaktur"
+                        ]
+                    }
+                ]
+            },
+            {
+                "tab": "Übungsaufgaben",
+                "groups": [
+                    {
+                        "group": "Allgemein",
+                        "pages": [
+                            "excersises/excersises"
+                        ]
+                    },
+                    {
+                        "group": "Bernoulli",
+                        "pages": []
+                    },
+                    {
+                        "group": "Binomialverteilung",
+                        "pages": []
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "tab": "Übungsaufgaben",
-        "groups": [
-          {
-            "group": "Allgemein",
-            "pages": [
-              "excersises/excersises"
-            ]
-          },
-          {
-            "group": "Bernoulli",
-            "pages": []
-          },
-          {
-            "group": "Binomialverteilung",
-            "pages": []
-          }
+    },
+    "logo": {
+        "light": "/logo/light.svg",
+        "dark": "/logo/dark.svg"
+    },
+    "navbar": {
+        "primary": {
+            "type": "button",
+            "label": "Dashboard",
+            "href": "https://dashboard.mintlify.com"
+        }
+    },
+    "contextual": {
+        "options": [
+            "copy",
+            "view",
+            "chatgpt",
+            "claude",
+            "perplexity",
+            "mcp",
+            "cursor",
+            "vscode"
         ]
-      }
-    ]
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+    },
+    "footer": {
+        "socials": {
+            "x": "https://x.com/mintlify",
+            "github": "https://github.com/mintlify",
+            "linkedin": "https://linkedin.com/company/mintlify"
+        },
+        "links": [
+            {
+                "header": "Quellen",
+                "items": [
+                    {
+                        "label": "Quellen",
+                        "href": "https://google.com"
+                    }
+                ]
+            }
+        ]
     }
-  },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
-  }
 }
