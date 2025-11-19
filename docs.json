@@ -8,12 +8,7 @@
         "dark": "#15803D"
     },
     "fonts": {
-      "family": "Zain",
-      "heading": {
-        "family": "Zain",
-        "format": "Regular",
-        "weight": 400
-      }
+      "family": "Zain"
     },
     "favicon": "/favicon.svg",
     "navigation": {
