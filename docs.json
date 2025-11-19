@@ -41,6 +41,11 @@
                             "binom/example",
                             "examples/porzellanmanufaktur"
                         ]
+                    },{
+                  "group": "Beispielaufgaben",
+                  "pages": [
+                    "examples/naturparktouristen"
+                  ]
                     }
                 ]
             },
