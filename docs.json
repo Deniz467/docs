@@ -119,11 +119,22 @@
         ]
     },
   "errors": {
-  "404": {
-    "redirect": false,
-    "title": "Page not found",
-    "description": "Well… that didn’t work. Don’t worry, probability of success was low anyway."
+    "404": {
+      "redirect": false,
+      "title": "Page not found",
+      "description": "Well… that didn’t work. Don’t worry, probability of success was low anyway."
+    },
+    "500": {
+      "title": "Server meltdown",
+      "description": "Something broke. Probably not your fault… probably."
+    },
+    "503": {
+      "title": "Service unavailable",
+      "description": "The server is taking a break. Try again when it feels like working."
+    },
+    "504": {
+      "title": "Timeout",
+      "description": "The server waited. And waited. And finally gave up. Understandable."
+    }
   }
-}
-
 }
