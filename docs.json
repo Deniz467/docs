@@ -17,6 +17,9 @@
     "styling": {
       "eyebrowse": "breadcrumbs"
     },
+    "appearance": {
+      "strict": false
+    },
     "navigation": {
         "tabs": [
             {
