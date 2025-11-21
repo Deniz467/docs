@@ -117,5 +117,13 @@
                 ]
             }
         ]
-    }
+    },
+  "errors": {
+  "404": {
+    "redirect": false,
+    "title": "Page not found",
+    "description": "Well… that didn’t work. Don’t worry, probability of success was low anyway."
+  }
+}
+
 }
