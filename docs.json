@@ -20,6 +20,9 @@
     "appearance": {
       "strict": false
     },
+    "search": {
+      "prompt": "Suchen..."
+    },
     "navigation": {
         "tabs": [
             {
