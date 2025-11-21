@@ -1,6 +1,5 @@
 .sidebar-group-header {
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  opacity: 0.65;
-  font-weight: 700;
+  background-color: #f9fafb;
+  padding: 4px 8px;
+  border-radius: 6px;
 }
