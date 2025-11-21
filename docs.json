@@ -11,6 +11,9 @@
       "family": "Zain"
     },
     "favicon": "/favicon.svg",
+    "thumbnails": {
+      "appearance": "light"
+    },
     "navigation": {
         "tabs": [
             {
