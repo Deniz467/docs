@@ -121,15 +121,15 @@
   "errors": {
     "404": {
       "redirect": false,
-      "title": "Page not found",
+      "title": "Page Not Found",
       "description": "Well… that didn’t work. Don’t worry, probability of success was low anyway."
     },
     "500": {
-      "title": "Server meltdown",
+      "title": "Server Meltdown",
       "description": "Something broke. Probably not your fault… probably."
     },
     "503": {
-      "title": "Service unavailable",
+      "title": "Service Unavailable",
       "description": "The server is taking a break. Try again when it feels like working."
     },
     "504": {
