@@ -1,5 +1,4 @@
 .sidebar-group-header {
-  background-color: #f9fafb;
-  padding: 4px 8px;
-  border-radius: 6px;
+  border-left: 3px solid #16a34a;
+  padding-left: 10px;
 }
