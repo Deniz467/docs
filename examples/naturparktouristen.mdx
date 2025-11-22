@@ -107,25 +107,89 @@ n &\geq k \geq 47
   ```mermaid
   graph LR
     classDef green fill:#b7f7c5,stroke:#2e8b57,stroke-width:2px,color:#000,font-weight:bold;
-
+  
     Start((Start)):::green
-
+  
     Start -->|0.80| BV[Spätestens am Vortag<br>gebucht]:::green
     Start -->|0.20| BT[Am Tag der Fahrt<br>gebucht]:::green
-
+  
     BV -->|0.90| BV_G[genutzt<br>0.72]:::green
     BV -->|0.10| BV_N[nicht genutzt<br>0.08]:::green
-
+  
     BT -->|0.95| BT_G[genutzt<br>0.19]:::green
     BT -->|0.05| BT_N[nicht genutzt<br>0.01]:::green
-```
+  ```
 </Expandable>
 
-<Expandable title="Content">
+<Expandable title="D">
   > Betrachtet wird eine zufällig ausgewählte, nicht genutzte Fahrkarte. Beurteilen Sie die folgende Aussage:
   >
   > _„Die Wahrscheinlichkeit dafür, dass diese Fahrkarte spätestens am Vortrag gebucht wurde, ist achtmal so groß wie die Wahrscheinlichkeit dafür, dass sie erst am Tag der Fahrt gebucht wurde.“_
 
+  <Steps>
+    <Step title="Ereignisse festlegen und bekannt Wahrscheinlichkeiten nutzen">
+      Wir verwenden die Ereignisse aus dem Baumdiagramm:
 
+      - $B_V$: Fahrkarte wurde spätestens am Vortag gebucht
+      - $B_T$: Fahrkarte wurde am Tag der Fahrt gebucht
+      - $N$: Fahrkarte wird nicht genutzt
 
+      Aus dem Baumdiagramm kennen wir bereits die Pfadwahrscheinlichkeiten:
+
+      $$
+      \begin{aligned}
+P(B_V \cap N) &= 0.80 \cdot 0.10 = 0.08 \\
+P(B_T \cap N) &= 0.20 \cdot 0.05 = 0.01
+\end{aligned}
+      $$
+    </Step>
+    <Step title="Wahrscheinlichkeit für eine nicht genutzte Fahrkarte">
+      Zuerst berechnen wir die Gesamtwahrscheinlichkeit dafür, dass eine Fahrkarte nicht genutzt wird. Dazu addieren wir die beiden Pfade, die zu „nicht genutzt“ führen:
+
+      $$
+      P(N) = P(B_V \cap N) + P(B_T \cap N) = 0.08 + 0.01 = 0.09
+      $$
+    </Step>
+    <Step title="Bedingte Wahrscheinlichkeit berechnen">
+      Gesucht sind die Wahrscheinlichkeiten
+
+      - $P(B_V \mid N)$: Fahrkarte wurde spätestens am Vortag gebucht, **unter der Bedingung**, dass sie nicht genutzt wurde
+      - $P(B_T \mid N)$: Fahrkarte wurde am Tag der Fahrt gebucht, **unter der Bedingung**, dass sie nicht genutzt wurde
+
+      Mit der Definition der bedingten Wahrscheinlichkeit
+
+      $$
+      P(A \mid B) = \frac {P (A \cap B)}{P (B)}
+      $$
+
+      erhalten wir:
+
+      $$
+      \begin{aligned}
+P(B_V \mid N) &= \frac{P(B_V \cap N)} {P(N)} &= \frac{0.08}{0.09} &= \frac{8}{9} &\approx 0.8889 \\
+P(B_T \mid N) &= \frac {P(B_V)}{P(N)} &= \frac {0.01}{0.09} &= \frac {1} {9} &\approx 0.1111
+\end{aligned}
+      $$
+    </Step>
+    <Step title="Verhältnisse bilden und Aussgae beurteilen">
+      Nun vergleichen wir die beiden Wahrscheinlichkeiten:
+
+      $$
+      \frac {P(B_V \mid N)}{P(B_T \mid N)}
+= \frac{\frac{8}{9}}{\frac{1}{9}}
+= \frac{8}{9} \cdot \frac{9}{1}
+= 8
+      $$
+
+      Das bedeutet:
+
+      $$
+      P(B_V \mid N) = 8 \cdot P(B_T \mid N)
+      $$
+
+      > Die Wahrscheinlichkeit, dass eine zufällig ausgewählte, **nicht genutzte** Fahrkarte spätestens am Vortag gebucht wurde, ist tatsächlich **achtmal so groß** wie die Wahrscheinlichkeit, dass sie erst am Tag der Fahrt gebucht wurde.
+      >
+      > Die gegeben Aussage ist also **richtig**.
+    </Step>
+  </Steps>
 </Expandable>
