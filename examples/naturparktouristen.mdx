@@ -52,6 +52,50 @@ k &= 36
 
       $E(X)= n \cdot p = 300 \cdot 0,14 = 42$
     </Step>
+    <Step title="Schwellwert berechnen">
+      Da wir mindestens $10 \space \%$ mehr über dem zu erwartenden Wert liegen wollen, berechnen wir:
+
+      $$
+      1.10 \cdot 42 = 46.2 
+      $$
+    </Step>
+    <Step title="Schwellwert aufrunden ">
+      Da $X$ lediglich ganzzahlig sein kann, gilt $46.2 \Rightarrow 47$ (Es gibt keine halben Personen).
+    </Step>
+    <Step title="Kumulierte Wahrscheinlichkeit berechnen ">
+      Nun müssen wir die [kumulierte Wahrscheinlichkeit](/binomialverteilung#kumulierte-wahrscheinlichkeit) berechnen.
+
+      **Gegeben**:
+
+      $$
+      \begin{alignedat}{1}
+n &= 300 \\
+p &= 0.14 \\
+n &\geq k \geq 47
+
+\end{alignedat}
+      $$
+
+      **In Formel einsetzen**
+
+      $$
+      P(X \leq 47) = \sum ^ {300} _ {i = 47} \binom {300}{i} \cdot 0.14 ^i \cdot (1-0.14) ^{300 - i}
+      $$
+
+      <Tip>
+        ### Taschenrechnerbefehl
+
+        1. Menu
+        2. Wahrscheinlichkeit (5)
+        3. Verteilung (5)
+        4. Binomial Cdf (B)
+      </Tip>
+      ![Naturpark B Jpe](/images/naturpark-b.jpeg)
+
+      $binomCdf(300,0.14,47,300) \approx 0,2243$
+
+      > Die Wahrscheinlichkeit dafür, dass die Anzahl der Radausflügler in der Stichprobe um mindestens $10 \space \%$ größer als der Erwartungswert für diese Anzahl ist, beträgt ungefähr $22.43 \space \%$.
+    </Step>
   </Steps>
 </Expandable>
 
