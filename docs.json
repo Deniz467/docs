@@ -44,7 +44,9 @@
                     {
                       "goup": "Bedingte Wahrscheinlichkeit",
                       "pages": [
-                        "bedingte-wahrscheinlichkeit/bedingte-wahrscheinlichkeit"
+                        "bedingte-wahrscheinlichkeit/bedingte-wahrscheinlichkeit",
+                        "bedingte-wahrscheinlichkeit/stochastische-unabhaengigkeit",
+                        "bedingte-wahrscheinlichkeit/stochastische-abhaengigkeit"
                       ]
                     },
                     {
