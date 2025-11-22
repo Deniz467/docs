@@ -42,6 +42,12 @@
                         ]
                     },
                     {
+                      "goup": "Bedingte Wahrscheinlichkeit",
+                      "pages": [
+                        "bedingte-wahrscheinlichkeit/bedingte-wahrscheinlichkeit"
+                      ]
+                    },
+                    {
                         "group": "Binomialverteilung",
                         "pages": [
                             "binomialverteilung",
