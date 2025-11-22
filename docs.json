@@ -42,7 +42,7 @@
                         ]
                     },
                     {
-                      "goup": "Bedingte Wahrscheinlichkeit",
+                      "group": "Bedingte Wahrscheinlichkeit",
                       "pages": [
                         "bedingte-wahrscheinlichkeit/bedingte-wahrscheinlichkeit",
                         "bedingte-wahrscheinlichkeit/stochastische-unabhaengigkeit",
