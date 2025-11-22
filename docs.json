@@ -45,14 +45,14 @@
                         "group": "Binomialverteilung",
                         "pages": [
                             "binomialverteilung",
-                            "binom/example",
-                            "examples/porzellanmanufaktur"
+                            "binom/example"
                         ]
                     },
                   {
                     "group": "Beispielaufgaben",
                     "pages": [
-                      "examples/naturparktouristen"
+                      "examples/naturparktouristen",
+                      "examples/porzellanmanufaktur"
                       ]
                     }
                 ]
