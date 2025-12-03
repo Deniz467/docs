@@ -1,148 +1,136 @@
 {
-    "$schema": "https://mintlify.com/docs.json",
-    "theme": "aspen",
-    "name": "Binomialverteilung",
-    "colors": {
-        "primary": "#16A34A",
-        "light": "#07C983",
-        "dark": "#15803D"
-    },
-    "fonts": {
-      "family": "Source Sans 3"
-    },
-    "favicon": "/favicon.svg",
-    "thumbnails": {
-      "appearance": "light"
-    },
-    "styling": {
-      "eyebrowse": "breadcrumbs"
-    },
-    "appearance": {
-      "strict": false
-    },
-    "search": {
-      "prompt": "Suchen..."
-    },
-    "navigation": {
-        "tabs": [
-            {
-                "tab": "Lernen",
-                "groups": [
-                    {
-                        "group": "Bernoulli",
-                        "pages": [
-                            "bernoulli/bernoulli"
-                        ]
-                    },
-                    {
-                        "group": "Sigma",
-                        "pages": [
-                            "sigma/normalverteilung",
-                            "sigma/sigma"
-                        ]
-                    },
-                    {
-                      "group": "Bedingte Wahrscheinlichkeit",
-                      "pages": [
-                        "bedingte-wahrscheinlichkeit/bedingte-wahrscheinlichkeit",
-                        "bedingte-wahrscheinlichkeit/stochastische-unabhaengigkeit",
-                        "bedingte-wahrscheinlichkeit/stochastische-abhaengigkeit"
-                      ]
-                    },
-                    {
-                        "group": "Binomialverteilung",
-                        "pages": [
-                            "binomialverteilung",
-                            "binom/example"
-                        ]
-                    },
-                  {
-                    "group": "Beispielaufgaben",
-                    "pages": [
-                      "examples/naturparktouristen",
-                      "examples/porzellanmanufaktur"
-                      ]
-                    }
-                ]
-            },
-            {
-                "tab": "Übungsaufgaben",
-                "groups": [
-                    {
-                        "group": "Allgemein",
-                        "pages": [
-                            "excersises/excersises"
-                        ]
-                    },
-                    {
-                        "group": "Bernoulli",
-                        "pages": []
-                    },
-                    {
-                        "group": "Binomialverteilung",
-                        "pages": []
-                    }
-                ]
-            }
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "aspen",
+  "name": "Binomialverteilung",
+  "colors": {
+    "primary": "#16A34A",
+    "light": "#07C983",
+    "dark": "#15803D"
+  },
+  "fonts": {
+    "family": "Source Sans 3"
+  },
+  "favicon": "/favicon.png",
+  "thumbnails": {
+    "appearance": "light"
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
+  "appearance": {
+    "strict": false
+  },
+  "search": {
+    "prompt": "Suchen..."
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Lernen",
+        "groups": [
+          {
+            "group": "Bernoulli",
+            "pages": [
+              "bernoulli/bernoulli"
+            ]
+          },
+          {
+            "group": "Sigma",
+            "pages": [
+              "sigma/normalverteilung",
+              "sigma/sigma"
+            ]
+          },
+          {
+            "group": "Bedingte Wahrscheinlichkeit",
+            "pages": [
+              "bedingte-wahrscheinlichkeit/bedingte-wahrscheinlichkeit",
+              "bedingte-wahrscheinlichkeit/stochastische-unabhaengigkeit",
+              "bedingte-wahrscheinlichkeit/stochastische-abhaengigkeit"
+            ]
+          },
+          {
+            "group": "Binomialverteilung",
+            "pages": [
+              "binomialverteilung",
+              "binom/example"
+            ]
+          },
+          {
+            "group": "Beispielaufgaben",
+            "pages": [
+              "examples/naturparktouristen",
+              "examples/porzellanmanufaktur"
+            ]
+          }
         ]
-    },
-    "logo": {
-        "light": "/logo/light.svg",
-        "dark": "/logo/dark.svg"
-    },
-    "navbar": {
-        "primary": {
-            "type": "button",
-            "label": "Dashboard",
-            "href": "https://dashboard.mintlify.com"
-        }
-    },
-    "contextual": {
-        "options": [
-            "copy",
-            "view",
-            "chatgpt",
-            "claude",
-            "perplexity",
-            "mcp",
-            "cursor",
-            "vscode"
+      },
+      {
+        "tab": "Übungsaufgaben",
+        "groups": [
+          {
+            "group": "Allgemein",
+            "pages": [
+              "excersises/excersises"
+            ]
+          },
+          {
+            "group": "Bernoulli",
+            "pages": []
+          },
+          {
+            "group": "Binomialverteilung",
+            "pages": []
+          }
         ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png"
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://dashboard.mintlify.com"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/Deniz467/docs",
+      "instagram": "https://www.instagram.com/xlily_sph/"
     },
-    "footer": {
-        "socials": {
-            "github": "https://github.com/Deniz467/docs",
-            "instagram": "https://www.instagram.com/xlily_sph/"
-        },
-        "links": [
-            {
-                "header": "Quellen",
-                "items": [
-                    {
-                        "label": "Quellen",
-                        "href": "https://binomialverteilung.app/quellen"
-                    }
-                ]
-            }
+    "links": [
+      {
+        "header": "Quellen",
+        "items": [
+          {
+            "label": "Quellen",
+            "href": "https://binomialverteilung.app/quellen"
+          }
         ]
-    },
+      }
+    ]
+  },
   "errors": {
     "404": {
       "redirect": false,
       "title": "Page Not Found",
       "description": "Well… that didn’t work. Don’t worry, probability of success was low anyway."
-    },
-    "500": {
-      "title": "Server Meltdown",
-      "description": "Something broke. Probably not your fault… probably."
-    },
-    "503": {
-      "title": "Service Unavailable",
-      "description": "The server is taking a break. Try again when it feels like working."
-    },
-    "504": {
-      "title": "Timeout",
-      "description": "The server waited. And waited. And finally gave up. Understandable."
     }
   }
 }
