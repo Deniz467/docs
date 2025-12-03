@@ -4,31 +4,67 @@ description: "Grundlagen des Bernoulli-Experiments und der Bernoulli-Kette."
 ---
 
 
-
 <Tip>
-### Kurzüberblick
+  ### Kurzüberblick
 
-- Nur zwei mögliche Ausgänge: Erfolg oder Misserfolg
-- Trefferwahrscheinlichkeit: $p$
-- Wiederholung eines Bernoulli-Experiments → Bernoulli-Kette
-- Verteilung für exakt $k$ Treffer: $\displaystyle P(X = k) = \binom{n}{k} p^k (1-p)^{\,n-k}$
+  - Nur zwei mögliche Ausgänge: Erfolg oder Misserfolg
+  - Trefferwahrscheinlichkeit: $p$
+  - Wiederholung eines Bernoulli-Experiments → Bernoulli-Kette
+  - Verteilung für exakt $k$ Treffer: $ P(X = k) = \binom{n}{k} p^k (1-p)^{\,n-k}$
 </Tip>
 
 
-Man spricht von einem Bernoulli-Experiment, wenn bei einem Zufallsexperiment nur $z$ Ausgänge möglich sind. Dabei gelten $E$ und $\overline{E}$ als Erfolg / Misserfolg.
+## Was ist ein Bernoulli-Experiment?
 
-Die Trefferwahrscheinlichkeit ist die Wahrscheinlichkeit $p$ für das Eintreten von $E$.
+Ein Bernoulli-Experiment ist ein sehr einfaches Zufallsexperiment:
+Es kann **nur zwei mögliche Ergebnisse** geben – Erfolg oder Misserfolg.
+- $E$: Erfolg
+- $\overline{E}$: Misserfolg
 
-Wiederhohlt man ein Bernoulli-Experiment $n$-mal, spricht man von einer Bernoulli-Kette der Länge $n$ mit der Trefferwahrscheinlichkeit $p$.
+Für den Erfolg wird eine feste Wahrscheinlichkeit $p$ festgelegt, also $p = P(E)$.\
+Da es nur diese beiden Ausgänge gibt, folgt automatisch, dass der Misserfolg mit der Wahrscheinlichkeit
+$1 - p$ eintritt.
 
-## Formeln
+<Note>
+  **Wichtig ist**: Die Wahrscheinlichkeit ändert sich **nicht**.
+  Ein Bernoulli-Experiment hat also immer denselben Aufbau und dieselben Chancen – egal wie oft es
+  wiederholt wird.
+</Note>
 
-Liegt eine Bernoulli-Kette der Länge $n$ mit der Trefferwahrscheinlichkeit $p$ vor, so wird die Wahrscheinlichkeit für genau $k$ Treffer mit $B(n;p;k)$ bezeichnet.
+Typische Beispiele sind:
+- Münzwurf (Kopf = Erfolg, Zahl = Misserfolg)
+- Würfelwurf (z. B. 6 ist Erfolg)
+- Glücksrad mit nur zwei möglichen Bereichen
 
-> $$
-> P(x=k) = B(n;p;k) = \binom {n}{k} \cdot p ^k \cdot (1-p)^{n-k}
-> $$
 
-- $p$ = Wahrscheinlichkeit
-- $k$ = Anzahl der Treffer / Erfolge
-- $n$ =
+## Was ist eine Bernoulli-Kette?
+
+Wird ein Bernoulli-Experiment **mehrmals hintereinander** unter denselben Bedingungen wiederholt,
+entsteht eine **Bernoulli-Kette**.
+
+Dabei gelten drei wichtige **Voraussetzungen**:
+1. **Unabhängigkeit:**
+Der Ausgang eines Versuches hat keinen Einfluss auf die anderen.
+Jeder Versuch ist quasi „neu“.
+
+2. **Konstante Erfolgswahrscheinlichkeit:**
+In jedem Versuch gilt dieselbe Erfolgswahrscheinlichkeit $p$.
+
+3. **Nur Erfolg oder Misserfolg:**
+Jeder Versuch hat genau zwei mögliche Ergebnisse.
+
+Wird das Experiment $n$-mal wiederholt, entsteht eine Bernoulli-Kette der Länge $n$.
+
+<Tip>
+  #### Beispiel:
+  Man wirft eine faire Münze 10-mal.
+  Dann ist
+  - $n = 10$
+  - $p = 0{,}5$
+  - und jeder Versuch ist unabhängig vom vorherigen.
+</Tip>
+
+Eine Bernoulli-Kette beschreibt also eine Serie von „Mini-Experimenten“, die alle gleich
+funktionieren.
+Die zugehörige Zufallsvariable $X$ zählt später, wie viele Erfolge insgesamt auftreten.
+

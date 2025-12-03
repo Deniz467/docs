@@ -1,0 +1,27 @@
+Man spricht von einem Bernoulli-Experiment, wenn bei einem Zufallsexperiment nur $z$ Ausgänge möglich sind. Dabei gelten $E$ und $\overline{E}$ als Erfolg / Misserfolg.
+
+
+Die Trefferwahrscheinlichkeit ist die Wahrscheinlichkeit $p$ für das Eintreten von $E$.
+
+
+Wiederhohlt man ein Bernoulli-Experiment $n$-mal, spricht man von einer Bernoulli-Kette der Länge $n$ mit der Trefferwahrscheinlichkeit $p$.
+
+
+## Formeln
+
+
+Liegt eine Bernoulli-Kette der Länge $n$ mit der Trefferwahrscheinlichkeit $p$ vor, so wird die Wahrscheinlichkeit für genau $k$ Treffer mit $B(n;p;k)$ bezeichnet.
+
+
+> $$
+
+> P(x=k) = B(n;p;k) = \binom {n}{k} \cdot p ^k \cdot (1-p)^{n-k}
+
+> $$
+
+
+- $p$ = Wahrscheinlichkeit
+
+- $k$ = Anzahl der Treffer / Erfolge
+
+- $n$ =
