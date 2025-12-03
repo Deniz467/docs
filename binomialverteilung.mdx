@@ -3,59 +3,155 @@ title: "Binomialverteilung"
 description: "Wahrscheinlichkeits "
 ---
 
+<Tip>
+  ### Kurzüberblick
+
+  - Bestimmt die Anzahl von Erfolgen in $n$ unabhängigen Bernoulli-Versuchen
+  - Zwei Ergebnisse pro Versuch: Erfolg oder Misserfolg
+  - Erfolgswahrscheinlichkeit bleibt immer gleich
+  - Einzelwahrscheinlichkeit: $\binom{n}{k} \cdot p^k \cdot (1-p)^{n-k}$
+  - Erwartungswert: $E(X) = n \cdot p$
+</Tip>
+
+[//]: # (## Was ist eine Binomialverteilung?)
+
+[//]: # ()
+[//]: # (- Sie ist eine <Tooltip tip="Eine diskrete Wahrscheinlichkeitsverteilung beschreibt die Wahrscheinlichkeiten für zählbare, also nicht-kontinuierliche Werte einer Zufallsvariable, wie zum Beispiel das Ergebnis eines Würfelwurfs &#40;1 bis 6&#41;. Im Gegensatz zu stetigen Verteilungen, bei denen beliebige Werte in einem Intervall möglich sind, kann die Zufallsvariable bei einer diskreten Verteilung nur bestimmte, einzelne Werte annehmen.">diskrete Wahrscheinlichkeitsverteilung</Tooltip>)
+
+[//]: # (- Man betrachtet eine Serie von **unabhängigen Zufallsexperimenten**, bei denen:)
+
+[//]: # (- Es nur **zwei mögliche Ergebnisse** gibt: Erfolg oder Misserfolg)
+
+[//]: # (- Die **Erfolgswahrscheinlichkeit** in jedem Experiment gleich ist)
+
+[//]: # (- Die Zufallsvariable zählt, wie viele Erfolge in einer bestimmten Anzahl von Versuchen auftreten)
+
+
 ## Was ist eine Binomialverteilung?
 
-- Sie ist eine <Tooltip tip="Eine diskrete Wahrscheinlichkeitsverteilung beschreibt die Wahrscheinlichkeiten für zählbare, also nicht-kontinuierliche Werte einer Zufallsvariable, wie zum Beispiel das Ergebnis eines Würfelwurfs (1 bis 6). Im Gegensatz zu stetigen Verteilungen, bei denen beliebige Werte in einem Intervall möglich sind, kann die Zufallsvariable bei einer diskreten Verteilung nur bestimmte, einzelne Werte annehmen.">diskrete Wahrscheinlichkeitsverteilung</Tooltip>
-- Man betrachtet eine Serie von **unabhänhigen Zufallsexperimenten**, bei denen:
-  - Es nur **zwei mögliche Ergebnisse** gibt: Erfolg oder Misserfolg
-  - Die **Erfolgswahrscheinlichkeit** in jedem Experiment gleich ist
-- Die Zufallsvariable zählt, wie viele Erfolge in einer bestimmten Anzahl von Versuchen auftreten
+Die **Binomialverteilung** beschreibt die Wahrscheinlichkeiten dafür, wie oft ein bestimmtes
+Ereignis (der „Erfolg“) in einer festen Anzahl von gleichartigen und unabhängigen
+Zufallsexperimenten auftritt.
+
+Betrachtet wird dabei eine Folge von Experimenten, bei denen es immer nur zwei mögliche Ausgänge
+gibt: Erfolg oder Misserfolg.
+Die Wahrscheinlichkeit für einen Erfolg beträgt in jedem einzelnen Versuch $p$ und bleibt bei
+allen Wiederholungen gleich.
+Die zugehörige Zufallsvariable $X$ zählt dann, wie viele Erfolge in den $n$ Versuchen vorkommen.
+
+Da nur bestimmte, zählbare Werte wie $0,1,2, \dots, n$ möglich sind, handelt es sich um eine
+**diskrete Wahrscheinlichkeitsverteilung**.
+Ein typisches Beispiel ist das mehrmalige Werfen einer Münze oder eines Würfels.
 
 <Note>
-  ## Formel: $\binom{n}{k} \cdot p ^k \cdot (1-p)^{n-k}$
+  ## Formel: $ \binom{n}{k} \cdot p^k \cdot (1-p)^{\,n-k}$
 
-  - $n$ = Größe der Stichprobe
-  - $p$ = Erfolgswahrscheinlichkeit des Ereignisses
-  - $k$ = Anzahl der Erfolge im Zufallsexperiment
-  - $\binom{n}{k}$ = Binomialkoeffizient
+  Diese Formel gibt die Wahrscheinlichkeit dafür an, dass in $n$ Versuchen genau $k$ Erfolge auftreten.
+  Dabei ist
+  - $n$ die Größe der Stichprobe,
+  - $p$ die Erfolgswahrscheinlichkeit des Ereignisses,
+  - $k$ die Anzahl der Erfolge im Zufallsexperiment,
+  - und $\binom{n}{k}$ der Binomialkoeffizient.
 </Note>
 
 ## Formeln
 
 <Accordion title="Einzelwahrscheinlichkeit" description="Bei n Versuchen genau k Erfolge" icon="dice-one">
-  Die Wahrscheinlich, bei $n$ Versuchen genau $k$ Erfolge zu erzielen, lautet:
+  Die Wahrscheinlichkeit, in $n$ unabhängigen Versuchen **genau** $k$ Erfolge zu erzielen, lautet:
 
   $$
-  P(X=k) = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k}
+  P(X = k) = \binom{n}{k} \cdot p^k \cdot (1-p)^{\,n-k}.
   $$
 
-  - $n$: Anzahl der Versuche
-  - $p$: Erfolgswahrscheinlichkeit des Ereignisses
-  - $k$: Anzahl der Erfolge im Zufallsexperiment
-  - $\binom{n}{k}$: Anzahl der Möglichkeiten, $k$ Erfolge in $n$ Versuchen anzuordnen
-  - $p^k$: Wahrscheinlichkeit für $k$ Erfolge
-  - $(1-p)^{n-k}$: Wahrscheinlichkeit für die restlichen Misserfolge
+  Die Formel setzt sich aus mehreren Teilen zusammen:\
+  Der Binomialkoeffizient $\binom{n}{k}$ zählt, auf wie viele verschiedene Arten die $k$ Erfolge
+  innerhalb der $n$ Versuche angeordnet sein können.\
+  Der Term $p^k$ beschreibt die Wahrscheinlichkeit dafür, dass genau diese $k$ Erfolge eintreten,
+  und $(1-p)^{\,n-k}$ steht für die Wahrscheinlichkeit der restlichen Misserfolge.
 </Accordion>
 
 <Accordion title="Kumulierte Wahrscheinlichkeit" description="Bei n Versuchen höchstens k Erfolge" icon="dice">
+  Oft interessiert man sich nicht nur für genau $k$ Erfolge, sondern dafür, dass **höchstens** $k$
+  Erfolge auftreten.
+  Diese kumulierte Wahrscheinlichkeit ergibt sich aus der Summe aller Einzelwahrscheinlichkeiten
+  von $0$ bis $k$:
+
   $$
-  P(X\leq k) = \sum ^ {k _ \text{Obergrenze}} _ {i=0}\binom{n}{i}p^i(1-p)^{n-i}
+  P(X \le k) = \sum_{i=0}^{k} \binom{n}{i} p^i (1-p)^{\,n-i}.
   $$
 
-  - $n$: Anzahl der Versuche
-  - $p$: Erfolgswahrscheinlichkeit des Ereignisses
-  - $k _ {\text{Obergrenze}}$: Obergrenze der gezählten Erfolge
-  - $\sum ^k _ {i=0}\binom{n}{i}$: Anzahl der Möglichkeiten, $k$ Erfolge in $n$ Versuchen anzuordnen, für alle $k$, bis zur Obergrenze
-  - $p^k$: Wahrscheinlichkeit für $k$ Erfolge
-  - $(1-p)^{n-k}$: Wahrscheinlichkeit für die restlichen Misserfolge
+  Damit wird jede mögliche Anzahl an Erfolgen berücksichtigt, die kleiner oder gleich der
+  gewünschten Obergrenze $k$ ist.
 </Accordion>
+
+[//]: # (## Formeln)
+
+[//]: # (<Accordion title="Einzelwahrscheinlichkeit" description="Bei n Versuchen genau k Erfolge")
+
+[//]: # (           icon="dice-one">)
+
+[//]: # (  Die Wahrscheinlich, bei $n$ Versuchen genau $k$ Erfolge zu erzielen, lautet:)
+
+[//]: # ()
+[//]: # (  $$)
+
+[//]: # (  P&#40;X=k&#41; = \binom{n}{k} \cdot p^k \cdot &#40;1-p&#41;^{n - k})
+
+[//]: # (  $$)
+
+[//]: # ()
+[//]: # (  - $n$: Anzahl der Versuche)
+
+[//]: # (  - $p$: Erfolgswahrscheinlichkeit des Ereignisses)
+
+[//]: # (  - $k$: Anzahl der Erfolge im Zufallsexperiment)
+
+[//]: # (  - $\binom{n}{k}$: Anzahl der Möglichkeiten, $k$ Erfolge in $n$ Versuchen anzuordnen)
+
+[//]: # (  - $p^k$: Wahrscheinlichkeit für $k$ Erfolge)
+
+[//]: # (  - $&#40;1-p&#41;^{n - k}$: Wahrscheinlichkeit für die restlichen Misserfolge)
+
+[//]: # (</Accordion>)
+
+[//]: # ()
+[//]: # (<Accordion title="Kumulierte Wahrscheinlichkeit" description="Bei n Versuchen höchstens k Erfolge")
+
+[//]: # (           icon="dice">)
+
+[//]: # (  $$)
+
+[//]: # (  P&#40;X\leq k&#41; = \sum ^ {k _ \text{Obergrenze}} _ {i = 0}\binom{n}{i}p^i&#40;1-p&#41;^{n - i})
+
+[//]: # (  $$)
+
+[//]: # ()
+[//]: # (  - $n$: Anzahl der Versuche)
+
+[//]: # (  - $p$: Erfolgswahrscheinlichkeit des Ereignisses)
+
+[//]: # (  - $k _ {\text{Obergrenze}}$: Obergrenze der gezählten Erfolge)
+
+[//]: # (  - $\sum ^k _ {i = 0}\binom{n}{i}$: Anzahl der Möglichkeiten, $k$ Erfolge in $n$ Versuchen)
+
+[//]: # (  anzuordnen, für alle $k$, bis zur Obergrenze)
+
+[//]: # (  - $p^k$: Wahrscheinlichkeit für $k$ Erfolge)
+
+[//]: # (  - $&#40;1-p&#41;^{n - k}$: Wahrscheinlichkeit für die restlichen Misserfolge)
+
+[//]: # (</Accordion>)
 
 ## Erwartungswert
 
-Der Erwartungswert $E$ ist der durchschnittliche den man bei sehr vielen Wiederholungen eines Zufallsexperiments erwarten würde.
+Der **Erwartungswert** einer binomialverteilten Zufallsvariable beschreibt den durchschnittlichen
+Wert, welcher bei sehr vielen Wiederholungen des gesamten Experiments erwartet wird.
 
-<Info>
-  ### Formel
+Da es in jedem der $n$ Versuche mit Wahrscheinlichkeit $p$ zu einem Erfolg kommt, ergibt sich der
+Erwartungswert ganz einfach zu:
 
-  $E(X)= n\cdot p$
-</Info>
+$$
+\boxed{
+\mu = E(X) = n \cdot p
+}
+$$
