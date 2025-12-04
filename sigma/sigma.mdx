@@ -3,8 +3,141 @@ title: "Sigma-Regeln"
 description: "Description of your new file."
 ---
 
-![image.png](/images/image.png)
+export const SigmaGraph = () => {
+  const xMin = 40;
+  const xMax = 360;
+  const yBase = 170;
+  const positions = Array.from({ length: 7 }, (_, i) => xMin + (i * (xMax - xMin)) / 6);
+  const labels = ["-3σ", "-2σ", "-1σ", "μ", "+1σ", "+2σ", "+3σ"];
 
+  return (
+      <div className="p-4 border rounded-2xl not-prose bg-white/80 dark:bg-zinc-900/80 border-zinc-200 dark:border-zinc-800">
+        <p className="text-sm text-zinc-700 dark:text-zinc-300 mb-3">
+          Normalverteilung mit markierten 1σ-, 2σ- und 3σ-Bereichen.
+        </p>
+
+        <svg viewBox="0 0 400 220" className="w-full h-auto">
+          {/* Hintergründe für 3σ, 2σ, 1σ */}
+          <rect
+              x={xMin}
+              y={30}
+              width={xMax - xMin}
+              height={yBase - 30}
+              fill="#bfdbfe"
+              opacity="0.35"
+          />
+          <rect
+              x={positions[1]}
+              y={30}
+              width={positions[5] - positions[1]}
+              height={yBase - 30}
+              fill="#60a5fa"
+              opacity="0.6"
+          />
+          <rect
+              x={positions[2]}
+              y={30}
+              width={positions[4] - positions[2]}
+              height={yBase - 30}
+              fill="#2563eb"
+              opacity="0.85"
+          />
+
+          {/* Glockenkurve */}
+          <path
+              d={`M ${xMin} ${yBase} C 140 30 260 30 ${xMax} ${yBase}`}
+              fill="none"
+              stroke="#0f172a"
+              strokeWidth="2.5"
+          />
+
+          {/* x-Achse */}
+          <line
+              x1={xMin}
+              y1={yBase}
+              x2={xMax}
+              y2={yBase}
+              stroke="#0f172a"
+              strokeWidth="1"
+          />
+
+          {/* Tickmarks + Labels */}
+          {positions.map((x, idx) => (
+              <g key={idx}>
+                <line
+                    x1={x}
+                    y1={yBase}
+                    x2={x}
+                    y2={yBase + (idx === 3 ? 10 : 6)}
+                    stroke="#0f172a"
+                    strokeWidth={idx === 3 ? 1.5 : 1}
+                />
+                <text
+                    x={x}
+                    y={yBase + 22}
+                    textAnchor="middle"
+                    fontSize="10"
+                    fill="#0f172a"
+                >
+                  {labels[idx]}
+                </text>
+              </g>
+          ))}
+
+          {/* μ-Label über dem Maximum */}
+          <text
+              x={positions[3]}
+              y={yBase - 12}
+              textAnchor="middle"
+              fontSize="11"
+              fontWeight="bold"
+              fill="#0f172a"
+          >
+            μ
+          </text>
+
+          {/* y-Achse (optional, nur ein kleines Stück) */}
+          <line
+              x1={xMin}
+              y1={yBase}
+              x2={xMin}
+              y2={40}
+              stroke="#0f172a"
+              strokeWidth="1"
+              strokeDasharray="4 4"
+          />
+        </svg>
+
+        {/* Legende */}
+        <div className="mt-3 grid gap-2 text-xs text-zinc-700 dark:text-zinc-300 sm:grid-cols-3">
+          <div className="flex items-center gap-1">
+          <span
+              className="inline-block h-3 w-3 rounded"
+              style={{ backgroundColor: "#2563eb" }}
+          />
+            <span>≈ 68,3 % in [μ − σ, μ + σ]</span>
+          </div>
+          <div className="flex items-center gap-1">
+          <span
+              className="inline-block h-3 w-3 rounded"
+              style={{ backgroundColor: "#60a5fa" }}
+          />
+            <span>≈ 95,4 % in [μ − 2σ, μ + 2σ]</span>
+          </div>
+          <div className="flex items-center gap-1">
+          <span
+              className="inline-block h-3 w-3 rounded"
+              style={{ backgroundColor: "#bfdbfe" }}
+          />
+            <span>≈ 99,7 % in [μ − 3σ, μ + 3σ]</span>
+          </div>
+        </div>
+      </div>
+  );
+};
+
+
+<SigmaGraph />
 
 ## Was bedeuten die Sigma-Regeln?
 
