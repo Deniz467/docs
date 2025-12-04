@@ -1,6 +1,6 @@
-import { useState } from "react";
+import {useState} from "react";
 
-export const NormalDistributionGraph = () => {
+export default function NormalDistributionGraph() {
   const [mu, setMu] = useState(0);
   const [sigma, setSigma] = useState(1.0);
 
@@ -26,8 +26,10 @@ export const NormalDistributionGraph = () => {
         (1 / (sigma * Math.sqrt(2 * Math.PI))) *
         Math.exp(-Math.pow(x - mu, 2) / (2 * sigma * sigma));
 
-    if (y > maxY) maxY = y;
-    points.push({ x, y });
+    if (y > maxY) {
+      maxY = y;
+    }
+    points.push({x, y});
   }
 
   const toSvgX = (x) =>
@@ -51,14 +53,15 @@ export const NormalDistributionGraph = () => {
   const ticks = [-3, -2, -1, 0, 1, 2, 3];
 
   return (
-      <div className="p-4 mb-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 not-prose">
+      <div
+          className="p-4 mb-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 not-prose">
         <div className="flex flex-col gap-4">
           <div>
             <p className="text-sm text-zinc-700 dark:text-zinc-200 mb-1">
               Interaktive Normalverteilung – passe Mittelwert μ und
               Standardabweichung σ an.
             </p>
-            <br />
+            <br/>
             <p className="text-xs text-zinc-500 dark:text-zinc-400">
               Aktuell: μ = {mu.toFixed(1)}, σ = {sigma.toFixed(1)}
             </p>
@@ -135,7 +138,8 @@ export const NormalDistributionGraph = () => {
           {/* Slider */}
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="space-y-1">
-              <label className="block text-xs font-medium text-zinc-700 dark:text-zinc-200">
+              <label
+                  className="block text-xs font-medium text-zinc-700 dark:text-zinc-200">
                 Mittelwert μ
               </label>
               <input
@@ -147,7 +151,8 @@ export const NormalDistributionGraph = () => {
                   onChange={(e) => setMu(parseFloat(e.target.value))}
                   className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-zinc-200 dark:bg-zinc-700 accent-emerald-600"
               />
-              <div className="flex justify-between text-[10px] text-zinc-500 dark:text-zinc-400">
+              <div
+                  className="flex justify-between text-[10px] text-zinc-500 dark:text-zinc-400">
                 <span>-2</span>
                 <span>0</span>
                 <span>+2</span>
@@ -155,7 +160,8 @@ export const NormalDistributionGraph = () => {
             </div>
 
             <div className="space-y-1">
-              <label className="block text-xs font-medium text-zinc-700 dark:text-zinc-200">
+              <label
+                  className="block text-xs font-medium text-zinc-700 dark:text-zinc-200">
                 Standardabweichung σ
               </label>
               <input
@@ -169,7 +175,8 @@ export const NormalDistributionGraph = () => {
                   }
                   className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-zinc-200 dark:bg-zinc-700 accent-emerald-600"
               />
-              <div className="flex justify-between text-[10px] text-zinc-500 dark:text-zinc-400">
+              <div
+                  className="flex justify-between text-[10px] text-zinc-500 dark:text-zinc-400">
                 <span>0,5</span>
                 <span>1,5</span>
                 <span>2,5</span>
