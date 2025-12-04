@@ -7,48 +7,52 @@ export const SigmaGraph = () => {
   const xMin = 40;
   const xMax = 360;
   const yBase = 170;
-  const positions = Array.from({ length: 7 }, (_, i) => xMin + (i * (xMax - xMin)) / 6);
+
+  const positions = Array.from({ length: 7 }, (_, i) =>
+      xMin + (i * (xMax - xMin)) / 6
+  );
   const labels = ["-3σ", "-2σ", "-1σ", "μ", "+1σ", "+2σ", "+3σ"];
 
   return (
-      <div className="p-4 border rounded-2xl not-prose bg-white/80 dark:bg-zinc-900/80 border-zinc-200 dark:border-zinc-800">
-        <p className="text-sm text-zinc-700 dark:text-zinc-300 mb-3">
+      <div className="p-4 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 not-prose">
+        <p className="text-s text-zinc-700 dark:text-zinc-200 mb-3">
           Normalverteilung mit markierten 1σ-, 2σ- und 3σ-Bereichen.
         </p>
 
         <svg viewBox="0 0 400 220" className="w-full h-auto">
-          {/* Hintergründe für 3σ, 2σ, 1σ */}
+          {/* 3σ-Bereich */}
           <rect
               x={xMin}
               y={30}
               width={xMax - xMin}
               height={yBase - 30}
-              fill="#bfdbfe"
-              opacity="0.35"
+              className="fill-emerald-50 dark:fill-emerald-900/40"
           />
+
+          {/* 2σ-Bereich */}
           <rect
               x={positions[1]}
               y={30}
               width={positions[5] - positions[1]}
               height={yBase - 30}
-              fill="#60a5fa"
-              opacity="0.6"
+              className="fill-emerald-100 dark:fill-emerald-800/60"
           />
+
+          {/* 1σ-Bereich */}
           <rect
               x={positions[2]}
               y={30}
               width={positions[4] - positions[2]}
               height={yBase - 30}
-              fill="#2563eb"
-              opacity="0.85"
+              className="fill-emerald-200 dark:fill-emerald-700/70"
           />
 
           {/* Glockenkurve */}
           <path
-              d={`M ${xMin} ${yBase} C 140 30 260 30 ${xMax} ${yBase}`}
-              fill="none"
-              stroke="#0f172a"
+              d={`M ${xMin} ${yBase} C 140 35 260 35 ${xMax} ${yBase}`}
+              className="stroke-emerald-600 dark:stroke-emerald-400"
               strokeWidth="2.5"
+              fill="none"
           />
 
           {/* x-Achse */}
@@ -57,7 +61,7 @@ export const SigmaGraph = () => {
               y1={yBase}
               x2={xMax}
               y2={yBase}
-              stroke="#0f172a"
+              className="stroke-zinc-500 dark:stroke-zinc-400"
               strokeWidth="1"
           />
 
@@ -69,66 +73,43 @@ export const SigmaGraph = () => {
                     y1={yBase}
                     x2={x}
                     y2={yBase + (idx === 3 ? 10 : 6)}
-                    stroke="#0f172a"
+                    className="stroke-zinc-500 dark:stroke-zinc-400"
                     strokeWidth={idx === 3 ? 1.5 : 1}
                 />
                 <text
                     x={x}
                     y={yBase + 22}
                     textAnchor="middle"
-                    fontSize="10"
-                    fill="#0f172a"
+                    className="fill-zinc-800 dark:fill-zinc-100 text-[10px]"
                 >
                   {labels[idx]}
                 </text>
               </g>
           ))}
 
-          {/* μ-Label über dem Maximum */}
+          {/* μ über dem Maximum */}
           <text
               x={positions[3]}
               y={yBase - 12}
               textAnchor="middle"
-              fontSize="11"
-              fontWeight="bold"
-              fill="#0f172a"
+              className="fill-zinc-900 dark:fill-zinc-100 text-[11px] font-semibold"
           >
             μ
           </text>
-
-          {/* y-Achse (optional, nur ein kleines Stück) */}
-          <line
-              x1={xMin}
-              y1={yBase}
-              x2={xMin}
-              y2={40}
-              stroke="#0f172a"
-              strokeWidth="1"
-              strokeDasharray="4 4"
-          />
         </svg>
 
         {/* Legende */}
-        <div className="mt-3 grid gap-2 text-xs text-zinc-700 dark:text-zinc-300 sm:grid-cols-3">
-          <div className="flex items-center gap-1">
-          <span
-              className="inline-block h-3 w-3 rounded"
-              style={{ backgroundColor: "#2563eb" }}
-          />
+        <div className="mt-4 grid gap-2 text-xs text-zinc-700 dark:text-zinc-200 sm:grid-cols-3">
+          <div className="flex items-center gap-2">
+            <span className="inline-block h-3 w-3 rounded bg-emerald-500 dark:bg-emerald-400" />
             <span>≈ 68,3 % in [μ − σ, μ + σ]</span>
           </div>
-          <div className="flex items-center gap-1">
-          <span
-              className="inline-block h-3 w-3 rounded"
-              style={{ backgroundColor: "#60a5fa" }}
-          />
+          <div className="flex items-center gap-2">
+            <span className="inline-block h-3 w-3 rounded bg-emerald-400 dark:bg-emerald-300" />
             <span>≈ 95,4 % in [μ − 2σ, μ + 2σ]</span>
           </div>
-          <div className="flex items-center gap-1">
-          <span
-              className="inline-block h-3 w-3 rounded"
-              style={{ backgroundColor: "#bfdbfe" }}
-          />
+          <div className="flex items-center gap-2">
+            <span className="inline-block h-3 w-3 rounded bg-emerald-300 dark:bg-emerald-200" />
             <span>≈ 99,7 % in [μ − 3σ, μ + 3σ]</span>
           </div>
         </div>
@@ -136,8 +117,8 @@ export const SigmaGraph = () => {
   );
 };
 
-
 <SigmaGraph />
+
 
 ## Was bedeuten die Sigma-Regeln?
 
@@ -149,9 +130,6 @@ Der Erwartungswert wird dabei mit $\mu$ bezeichnet, die Standardabweichung mit $
 Die Standardabweichung $\sigma$ misst, wie stark die Werte im Durchschnitt vom Mittelwert abweichen.
 Sie bestimmt also, wie „breit“ oder „schmal“ die Normalverteilung ist.
 
-- Geben Wahrscheinlichkeits-Verteilungen für bestimmtes Intervall an
-- Gelten immer bei NORMALVERTEILTEN Wahrscheinlichkeit
-
 ## Die Sigma-Regeln im Überblick
 
 Die folgenden drei Aussagen gelten für **jede** normalverteilte Zufallsvariable:
@@ -159,9 +137,9 @@ Die folgenden drei Aussagen gelten für **jede** normalverteilte Zufallsvariable
 <Note>
   ### Sigma-Regeln
 
-  - $P(\mu - \sigma \le X \le \mu + \sigma) \approx 68{,}3\%$
-  - $P(\mu - 2\sigma \le X \le \mu + 2\sigma) \approx 95{,}4\%$
-  - $P(\mu - 3\sigma \le X \le \mu + 3\sigma) \approx 99{,}7\%$
+  - $P(\mu - \sigma \le X \le \mu + \sigma) \approx 68,3\%$
+  - $P(\mu - 2\sigma \le X \le \mu + 2\sigma) \approx 95,4\%$
+  - $P(\mu - 3\sigma \le X \le \mu + 3\sigma) \approx 99,7\%$
 
   $\mu$ = Erwartungswert (Mittelwert)\
   $\sigma$ = Standardabweichung
